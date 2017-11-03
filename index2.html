@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Psychic Game</title>
+    <link rel="stylesheet" href="assets/css/reset.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+    <!=== <script src="assets/javascript/game.js"></script> --->
+</head>
+
+<body>
+    <!-- 
+    Develop the display for the screen.
+        Include a title, a prompt to enter a letter, a win count, a loss count
+        a try counter (count down from 9), and a list of guesses so far.-->
+
+    <h1>Psychic Game>/h1>
+        <br>
+        <br>
+        <h3>I am thinking of a letter.</h3>
+        <br>
+        <h3>Can you guess what it is?</h3>
+        <br>
+        <h3>I&prime;ll give you nine tries.</h3>
+        <br>
+        <br>
+        <br>
+        <p>Your win count: <span id="wins"></span></p>
+        <br>
+        <br>
+        <p>Your loss count: <span id="losses"></span></p>
+        <br>
+        <br>
+        <p>Remaining Guesses: <span id="guesses"></span></p>
+        <br>
+        <br>
+        <p>Press any key to start!</p>
+        <br>
+        <p>Here are your guesses so far: <span id="entries"></span></p>
+
+
+        <div id=game>
+
+
+        </div>
+
+        <script type="text/javascript">
+            // Initialize variables.
+            var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+            var wins = 0;
+            var losses = 0;
+            var guesses = 9;
+            var entries = [];
+            var chosen = "";
+            if (guesses === 9) {
+                entries.push("None yet!");
+            }
+            // Generate a random letter to be guessed.
+            var target = alphabet[Math.floor(Math.random()) * 25];
+            alert(target);
+            // Accept input from the user (for as many as nine tries).        
+            document.onkeyup = function(event) {
+                // Determines which key was pressed.
+                chosen = event.key.toLowerCase;
+                // Show the tries on the screen, separated by commas.
+                if (guesses >= 0) {
+
+                    entries.push(chosen + ",");
+                }
+                alert(target)
+                // If they match, increment a win counter by 1;
+                function winsFunction() {
+                    document.getElementById("wins").innerHTML = wins;
+                }
+                winsFunction();
+
+                function lossesFunction() {
+                    document.getElementById("losses").innerHTML = losses;
+                }
+                lossesFunction();
+
+
+                function guessesFunction() {
+                    document.getElementById("guesses").innerHTML = guesses;
+                }
+                guessesFunction();
+
+
+                if (guesses < 9) {
+                    function entriesFunction() {
+                        entries.push(chosen + ",");
+                        document.getElementById("entries").innerHTML = chosen;
+                    }
+                    entriesFunction();
+                }
+
+                alert(chosen)
+
+                // Show the tries on the screen, separated by commas.
+                if (guesses < 9) {
+
+                    entries.push(chosen + ",");
+                }
+
+                // If they match, increment a win counter by 1;
+                function winsFunction() {
+                    document.getElementById("wins").innerHTML = wins;
+                }
+                winsFunction();
+
+                function lossesFunction() {
+                    document.getElementById("losses").innerHTML = losses;
+                }
+                lossesFunction();
+
+
+                function guessesFunction() {
+                    document.getElementById("guesses").innerHTML = guesses;
+                }
+                guessesFunction();
+
+
+                if (guesses < 9) {
+                    function entriesFunction() {
+                        entries.push(chosen + ",");
+                        document.getElementById("entries").innerHTML = chosen;
+                    }
+                    entriesFunction();
+
+                }
+            }
+        </script>
+</body>
+
+</html>
+
+<!-- var checkTarget = function(okay) {
+                    if charCode(chosen) > 96 && charCode(chosen) < 123
+                    target = chosen
+                    else alert("Please choose a letter.")} 
+                    
+                var target = "a";
+                var chosen = "a";
+                if (chosen == target) {
+                    alert(good);
+                } -->
